@@ -1,0 +1,121 @@
+/* variables */
+:root {
+  --text-color: rgb(255, 255, 255);
+  --sombras: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Abhaya Libre ExtraBold";
+}
+
+/* clases */
+.r-nav {
+  display: flex;
+  justify-content: end;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.header_bg {
+  color: var(--text-color);
+  background-image:
+    linear-gradient(rgba(3, 3, 3, 0.19), rgba(3, 3, 3, 0.19)),
+    linear-gradient(
+      180deg,
+      rgba(77, 231, 234, 0.3) 0%,
+      rgba(8, 110, 111, 0.5) 100%
+    ),
+    url("/assets/media/header.png");
+  background-size: cover;
+  height: 660px;
+  position: relative;
+}
+
+.top-nav {
+  width: 100%;
+}
+
+.text-shadow {
+  font-size: large;
+  color: var(--text-color);
+  text-shadow: var(--sombras);
+}
+
+.titulo_header {
+  border: solid 5px rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 20px 40px; /* Añadimos espacio interno para que no respire mejor */
+  text-shadow: var(--sombras);
+}
+
+.cuadro_header {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente el título en el espacio sobrante */
+  text-align: center;
+}
+
+.about_section {
+  padding: 25px;
+  position: relative;
+  p {
+    text-align: center;
+  }
+}
+.profile_img {
+  border-radius: 100px;
+  border: solid 4px rgba(255, 20, 40, 0.5);
+}
+.overlapping-image-container {
+  /* Ajusta el tamaño según tu imagen de Figma */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* La hace circular */
+  overflow: hidden; /* Corta la imagen si es mayor que el contenedor */
+  background-color: white; /* Color de fondo si la imagen tiene transparencia */
+  border: 4px solid var(--body-bg); /* Opcional: un borde para separar */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+
+  /* ¡EL TRUCO CLAVE! Margen negativo */
+  /* El valor debe ser aproximadamente la mitad de la altura de la imagen */
+  margin-top: -95px;
+
+  /* Superposición */
+  position: relative;
+  z-index: 10; /* Asegura que esté por encima del fondo del header */
+}
+
+.overlapping-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen dentro del círculo */
+}
+.projects_section {
+  background-color: #76a69e;
+  padding: 25px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+    @media (max-width: 720px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
