@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:20px;
+  gap: 20px;
 }
 .header_bg {
   color: var(--text-color);
@@ -63,16 +63,16 @@
   text-align: center;
 }
 
-.about_section{
-    padding: 25px;
-    position: relative;
-    p{
-        text-align: center;
-    }
+.about_section {
+  padding: 25px;
+  position: relative;
+  p {
+    text-align: center;
+  }
 }
-.profile_img{
-    border-radius: 100px;
-    border: solid 4px rgba(255, 20, 40, 0.50);
+.profile_img {
+  border-radius: 100px;
+  border: solid 4px rgba(255, 20, 40, 0.5);
 }
 .overlapping-image-container {
   /* Ajusta el tamaño según tu imagen de Figma */
@@ -86,7 +86,7 @@
 
   /* ¡EL TRUCO CLAVE! Margen negativo */
   /* El valor debe ser aproximadamente la mitad de la altura de la imagen */
-  margin-top: -95px; 
+  margin-top: -95px;
 
   /* Superposición */
   position: relative;
@@ -97,4 +97,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ajusta la imagen dentro del círculo */
+}
+.projects_section {
+  background-color: #76a69e;
+  padding: 25px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
